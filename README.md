@@ -91,7 +91,7 @@ TH1F h = newTH1F( "name", "title", 100, 0, 100 );
 
 ### Deleting instance of the ROOT object
 
-Since the JROOT objects are not managed by JAVA garbage collection, you should release memory of the objects manually. Use 'delete'  method. (if 'delete' method is not exists, use 'destroy' method instad.)
+Since the JROOT objects are not managed by JAVA garbage collection, you should release memory of the objects manually. Use 'delete'  method. (if 'delete' method is not exists, use 'destroy' method instead.)
 
 ```java
 h.delete();
@@ -333,7 +333,6 @@ public class FillTTree {
 
     Pointer px = Pointer.newInt();
     TLorentzVector vec = newTLorentzVector(0, 0, 0, 0);
-    Pointer data = 
 
     tree.branch("x", px, "x/I");
     tree.branch("vec", "TLorentzVector", vec);

@@ -12,7 +12,6 @@ public class FillTTree {
 
     Pointer px = Pointer.newInt();
     TLorentzVector vec = newTLorentzVector(0, 0, 0, 0);
-    Pointer data = 
 
     tree.branch("x", px, "x/I");
     tree.branch("vec", "TLorentzVector", vec);

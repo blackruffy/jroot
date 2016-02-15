@@ -16,7 +16,7 @@ Note that JROOT is under development. Please be casefull before using JROOT in y
 
 Source
 
-    [jroot_6.04.06_v0.5.tgz](http://java-root.appspot.com/jroot_6.04.06_v0.5.tgz)
+[jroot_6.04.06_v0.5.tgz](http://java-root.appspot.com/jroot_6.04.06_v0.5.tgz)
 
 ## Installation
 
@@ -68,12 +68,13 @@ This process creates a shared library and a jar file.
 export LD_LIBRARY_PATH=/path/to/jroot/target/lib:$LD_LIBRARY_PATH
 ```
 
-NOTE that for mac use DYLD_LIBRARY_PATH instead of LD_LIBRARY_PATH.
+NOTE that for OS X, use DYLD_LIBRARY_PATH instead of LD_LIBRARY_PATH.
  
 - Adding jar file to CLASSPATH
 
 ```
 export CLASSPATH=/path/to/jroot/target/jroot_6.04.06_v0.5.jar:$CLASSPATH
+```
 
 ## Defferences from ROOT
 

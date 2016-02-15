@@ -496,7 +496,7 @@ public class ReadTClonesArray {
 }
 ```
 
-### fill structured data to TTree
+### Fill structured data to TTree
 
 ```java
 import net.blackruffy.root.*;
@@ -513,7 +513,7 @@ public class FillStruct {
 
     // allocate memory with 32 bytes and get its pointer.
     // in this case, you are going to save a int data, a float data, a double data and a int array with 4 data in an event.
-    // to total bytes is
+    // the total bytes is
     // int(4 bytes) + float(4 bytes) + double(8 bytes) + int array(4*4 bytes) = 32 bytes
     Pointer data = allocate(32);
 

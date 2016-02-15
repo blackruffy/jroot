@@ -12,9 +12,6 @@ public class ReadTNtuple {
     final TNtuple tree = TNtuple(file.get("tuple"));
 
     long nev = tree.getEntries();
-    
-    //tree.setBranchAddress("x", px);
-    //tree.setBranchAddress("vec", vec.toReference());
 
     for( long ev=0; ev<nev; ev++ ) {
       tree.getEntry(ev);

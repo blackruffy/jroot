@@ -1,0 +1,7 @@
+OS := $(shell uname)
+VERSION := 0.5
+ROOT_VERSION := 6.04.06
+
+CPP_ROOT_DIR := `root-config --prefix`
+CPP_ROOT_LIBS := `root-config --libs --glibs`
+CPP_ROOT_FLAGS := `root-config --cflags`

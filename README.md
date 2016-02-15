@@ -84,7 +84,7 @@ JROOT can be used in the same way as ROOT except a few differences below.
 
 The all ROOT objects are implemented as Java interfaces in JROOT. So you can not instanciate ROOT objects directly. In order to instaciate ROOT objects, use static factory method 'new + <class name>' in class JRoot.
 
-```[Java]
+```Java
 import net.balckruffy.root.*;
 import static net.balckruffy.root.JRoot.*;
 TH1F h = newTH1F( "name", "title", 100, 0, 100 );

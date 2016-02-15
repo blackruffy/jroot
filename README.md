@@ -24,7 +24,7 @@ This build has been tested on
 - Ubuntu 15.10 x86_64
 - Java 1.8.0_65
 - gcc 5.2.1
-- root v5.04/06 
+- root v6.04/06 
 
 ### Setup environments
 

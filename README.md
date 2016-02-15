@@ -199,7 +199,7 @@ public class DrawTGraph {
 
     TGraph g = newTGraph(size, xs, ys);
 
-    double ax = g.getX().getDoubleArray(g.getN());
+    double[] as = g.getX().getDoubleArray(g.getN());
 
     for( int i=0; i<size; i++ ) {
       System.out.printf("%f, %f\n", xs[i], as[i]);

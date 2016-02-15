@@ -84,7 +84,7 @@ mkdir:
 package:
 	${MAKE} clean
 	${MAKE} mkdir
-	tar zcvf build/jroot_${ROOT_VERSION}_v${VERSION}.tgz ../jroot
+	tar zcvf build/jroot_${ROOT_VERSION}_v${VERSION}.tgz --exclude .git --exclude build ../jroot
 
 clean:
 	rm -vf *.root

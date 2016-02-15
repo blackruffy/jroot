@@ -81,5 +81,13 @@ run-example-cpp:
 mkdir:
 	mkdir -p ${CPP_LIB_DIR} ${CPP_OBJ_DIR} ${CPP_BIN_DIR} ${CPP_BUILD_SRC_DIR} ${JAVA_OUTPUT_CLASS_DIR} ${JAVA_BUILD_SRC_DIR} ${JAVADOC_DIR}
 
+package:
+	${MAKE} clean
+	${MAKE} mkdir
+	tar zcvf build/jroot_${ROOT_VERSION}_v${VERSION}.tgz ../jroot
+
 clean:
+	rm -vf *.root
+	cd examples/cpp && rm -vf `ls | grep -v '.*\.cpp'`
+	rm -vf examples/java/*.class
 	rm -rfv ./build

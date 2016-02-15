@@ -65,7 +65,7 @@ This process creates a shared library and a jar file.
 - Adding shared libraries to LD_LIBRARY_PATH
 
 ```
-export LD_LIBRARY_PATH=/path/to/jroot/target/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/path/to/jroot/build/lib:$LD_LIBRARY_PATH
 ```
 
 NOTE that for OS X, use DYLD_LIBRARY_PATH instead of LD_LIBRARY_PATH.
@@ -73,7 +73,7 @@ NOTE that for OS X, use DYLD_LIBRARY_PATH instead of LD_LIBRARY_PATH.
 - Adding jar file to CLASSPATH
 
 ```
-export CLASSPATH=/path/to/jroot/target/jroot_6.04.06_v0.5.jar:$CLASSPATH
+export CLASSPATH=/path/to/jroot/build/lib/jroot_6.04.06_v0.5.jar:$CLASSPATH
 ```
 
 ## Defferences from ROOT

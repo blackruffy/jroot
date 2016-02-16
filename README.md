@@ -122,7 +122,8 @@ Some functions of ROOT takes pointers or returns pointers. So you nedd to know h
 
 ```
 // Java
-import static net.blackruffy.root.Pointer.*
+import net.blackruffy.root.Pointer;
+import static net.blackruffy.root.Pointer.*;
 ```
 
 ### Allocate memory
@@ -150,7 +151,7 @@ This is equivalent to
 
 ```c++
 // C/C++
-void* q = p + 3;
+void* q = p + 4;
 ```
 
 ### Get pointer of pointer
@@ -171,6 +172,7 @@ void* q = &p;
 
 ```java
 // Java
+Pointer p = newInt(10);
 int x = p.getIntValue();
 ```
 
@@ -178,6 +180,7 @@ This is equivalent to
 
 ```
 // C/C++
+void* p = new int(10);
 int x = *(int*)p;
 ```
 
@@ -185,6 +188,7 @@ int x = *(int*)p;
 
 ```java
 // Java
+Pointer p = allocate(4); // or Pointer p = newInt();
 p.setIntValue(100);
 ```
 
@@ -192,6 +196,7 @@ This is equivalent to
 
 ```c++
 // C/C++
+void* p = malloc(4);
 *(int*)p = 100;
 ```
 

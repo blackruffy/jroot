@@ -75,6 +75,8 @@ NOTE that for OS X, use DYLD_LIBRARY_PATH instead of LD_LIBRARY_PATH.
 export CLASSPATH=/path/to/jroot/build/lib/jroot_6.04.06_v0.5.jar:$CLASSPATH
 ```
 
+NOTE: use '-XstartOnFirstThread' option when you run JROOT application on OS X.
+
 ## Defferences from ROOT
 
 JROOT can be used in the same way as ROOT except a few differences below.

@@ -121,84 +121,98 @@ Some functions of ROOT takes pointers or returns pointers. So you nedd to know h
 ### Import Pointer type
 
 ```
+// Java
 import static net.blackruffy.root.Pointer.*
 ```
 
 ### Allocate memory
 
 ```java
+// Java
 Pointer p = allocate(bytes);
 ```
 
 This is equivalent to
 
 ```c++
+// C/C++
 void* p = malloc(bytes);
 ```
 
 ### Increment pointer address
 
 ```java
+// Java
 Pointer q = p.at(4);
 ```
 
 This is equivalent to
 
 ```c++
+// C/C++
 void* q = p + 3;
 ```
 
 ### Get pointer of pointer
 
 ```java
+// Java
 Pointer q = p.getReference();
 ```
 
 This is equivalent to
 
 ```
+// C/C++
 void* q = &p;
 ```
 
 ### Get int value from pointer
 
 ```java
+// Java
 int x = p.getIntValue();
 ```
 
 This is equivalent to
 
 ```
+// C/C++
 int x = *(int*)p;
 ```
 
 ### Set int value to pointer
 
 ```java
+// Java
 p.setIntValue(100);
 ```
 
 This is equivalent to
 
 ```c++
+// C/C++
 *(int*)p = 100;
 ```
 
 ### Get int array from pointer
 
 ```java
+// Java
 int[] xs = p.getIntArray(size);
 ```
 
 This is equivalent to
 
 ```c++
+// C/C++
 int* xs = (int*)p;
 ```
 
 ### Set int array to pointer
 
 ```java
+// Java
 int[] xs = {1, 2, 3};
 p.setIntArray(xs);
 ```
@@ -206,6 +220,7 @@ p.setIntArray(xs);
 This is equivalent to
 
 ```c++
+// C/C++
 int xs[3] = {1, 2, 3};
 void* p = xs;
 ```

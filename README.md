@@ -120,7 +120,7 @@ Some functions of ROOT takes pointers or returns pointers. So you nedd to know h
 
 ### Import Pointer type
 
-```
+```java
 // Java
 import net.blackruffy.root.Pointer;
 import static net.blackruffy.root.Pointer.*;

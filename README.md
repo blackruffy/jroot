@@ -114,6 +114,102 @@ If you want to cast from TObject to JROOT object, do not use default cast method
 TH1F h = TH1F(list.findObject("name"));
 ```
 
+## Dealing with pointer
+
+Some functions of ROOT takes pointers or returns pointers. So you nedd to know how JRoot can deal with C/C++ pointers.
+
+### Import Pointer type
+
+```
+import static net.blackruffy.root.Pointer.*
+```
+
+### Allocate memory
+
+```java
+Pointer p = allocate(bytes);
+```
+
+This is equivalent to
+
+```c++
+void* p = malloc(bytes);
+```
+
+### Increment pointer address
+
+```java
+Pointer q = p.at(4);
+```
+
+This is equivalent to
+
+```c++
+void* q = p + 3;
+```
+
+### Get pointer of pointer
+
+```java
+Pointer q = p.getReference();
+```
+
+This is equivalent to
+
+```
+void* q = &p;
+```
+
+### Get int value from pointer
+
+```java
+int x = p.getIntValue();
+```
+
+This is equivalent to
+
+```
+int x = *(int*)p;
+```
+
+### Set int value to pointer
+
+```java
+p.setIntValue(100);
+```
+
+This is equivalent to
+
+```c++
+*(int*)p = 100;
+```
+
+### Get int array from pointer
+
+```java
+int[] xs = p.getIntArray(size);
+```
+
+This is equivalent to
+
+```c++
+int* xs = (int*)p;
+```
+
+### Set int array to pointer
+
+```java
+int[] xs = {1, 2, 3};
+p.setIntArray(xs);
+```
+
+This is equivalent to
+
+```c++
+int xs[3] = {1, 2, 3};
+void* p = xs;
+```
+
 ## Examples
 
 ### Draw TH1F

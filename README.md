@@ -163,7 +163,7 @@ Pointer q = p.getReference();
 
 This is equivalent to
 
-```
+```c++
 // C/C++
 void* q = &p;
 ```
@@ -178,7 +178,7 @@ int x = p.getIntValue();
 
 This is equivalent to
 
-```
+```c++
 // C/C++
 void* p = new int(10);
 int x = *(int*)p;

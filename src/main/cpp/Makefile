@@ -7,7 +7,7 @@ ifeq ($(OS),Darwin)
 CPP_OPT := -w -fPIC -Xlinker -rpath -Xlinker ${CPP_ROOT_DIR}/lib
 CPP_LIB_DIR := ../../lib/darwin
 CPP_OUTPUT_LIB := libJRoot.dylib
-CPP_FLAGS := -I./ -I${JAVA_HOME}/include ${CPP_ROOT_FLAGS}
+CPP_FLAGS := -I./ -I${JAVA_HOME}/include -I${JAVA_HOME}/include/darwin ${CPP_ROOT_FLAGS}
 else
 CPP_OPT := -w -fPIC
 CPP_LIB_DIR := ../../lib

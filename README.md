@@ -15,7 +15,7 @@ Note that JROOT is under development. Please be casefull before using JROOT in y
 
 Source
 
-[jroot_6.04.06_v0.5.tgz](http://java-root.appspot.com/jroot_6.04.06_v0.5.tgz)
+[jroot_6.06.00_v0.5.1.tgz](http://java-root.appspot.com/jroot_6.06.00_v0.5.1.tgz)
 
 ## Installation
 

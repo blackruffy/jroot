@@ -116,9 +116,9 @@ If you want to cast from TObject to JROOT object, do not use default cast method
 TH1F h = TH1F(list.findObject("name"));
 ```
 
-## Dealing with pointer
+## Handling the pointer
 
-Some functions of ROOT takes pointers or returns pointers. So you nedd to know how JRoot can deal with C/C++ pointers.
+Some ROOT functions take pointers or return pointers. So you need to know how JRoot can handle the C/C++ pointers.
 
 ### Import Pointer type
 

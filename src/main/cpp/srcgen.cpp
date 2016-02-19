@@ -1,6 +1,8 @@
 /*
 Copyright (c) 2016, Taichi Kubo
 All rights reserved.
+
+This software is released under the LGPL/GPL License.
 */
 
 #include "TMap.h"

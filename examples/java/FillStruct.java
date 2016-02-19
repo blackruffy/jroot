@@ -34,7 +34,7 @@ public class FillStruct {
       // set an array at 16 bytes from the address of pointer 'data'
       data.at(16).setIntArray(xs);
       tree.fill();
-      f.flush();
+      //f.flush();
     }
 
     f.write();

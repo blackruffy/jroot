@@ -23,7 +23,7 @@ public class FillTTree {
       px.setIntValue((int)(ran.gaus()*100));
       vec.setX(ran.gaus());
       tree.fill();
-      f.flush();
+      // f.flush();
     }
 
     f.write();

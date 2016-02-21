@@ -34,6 +34,8 @@ This build has been tested on
 $ export JAVA_HOME=/path/to/javadir
 ```
 
+For OS X users, you may be able to find the java directory at /Library/Java/JavaVirtualMachines/jdk1.8.x_xx.jdk/Contents/Home.
+
 - Setup the ROOTSYS environment variable to installed ROOT directory.
 
 ```

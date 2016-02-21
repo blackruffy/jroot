@@ -17,6 +17,12 @@ Source
 
 [jroot_6.06.00_v0.5.1.tgz](http://java-root.appspot.com/jroot_6.06.00_v0.5.1.tgz)
 
+## Supported ROOT versions
+
+- 6.04
+- 6.05
+- 6.06
+
 ## Installation
 
 This build has been tested on
@@ -24,7 +30,7 @@ This build has been tested on
 - Ubuntu 15.10 x86_64
 - Java 1.8.0_65
 - gcc 5.2.1
-- root v6.04/06 
+- root v6.04/14
 
 ### Setup environments
 

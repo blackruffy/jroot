@@ -3,6 +3,12 @@ This software is released under the LGPL/GPL License, see LICENCE
 
 # JROOT
 
+JROOT is a Java binding for the [ROOT](https://root.cern.ch). JROOT provides you a lot of interfaces to the ROOT objects from Java. Take a look at the [Javadoc](http://java-root.appspot.com/javadoc_v0.5/index.html) to see which ROOT objects are supported.
+
+Note that JROOT is under development. You need to do enough tests before using JROOT in your project.
+
+# Contents
+
   * [JROOT](#jroot)
     * [Javadoc](#javadoc)
     * [Download](#download)
@@ -38,10 +44,6 @@ This software is released under the LGPL/GPL License, see LICENCE
       * [Read data from TTree with TClonesArray](#read-data-from-ttree-with-tclonesarray)
       * [Fill structured data to TTree](#fill-structured-data-to-ttree)
       * [Read structured data from TTree](#read-structured-data-from-ttree)
-
-JROOT is a Java binding for the [ROOT](https://root.cern.ch). JROOT provides you a lot of interfaces to the ROOT objects from Java. Take a look at the [Javadoc](http://java-root.appspot.com/javadoc_v0.5/index.html) to see which ROOT objects are supported.
-
-Note that JROOT is under development. You need to do enough tests before using JROOT in your project.
 
 ## Javadoc
 

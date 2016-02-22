@@ -9,15 +9,14 @@ Note that JROOT is under development. You need to do enough tests before using J
 
 # Contents
 
-  * [JROOT](#jroot)
-    * [Javadoc](#javadoc)
-    * [Download](#download)
-    * [Supported ROOT versions](#supported-root-versions)
-    * [Installation](#installation)
-    * [Preparing before using JROOT](#preparing-before-using-jroot)
-    * [Defferences from ROOT](#defferences-from-root)
-    * [Handling the pointer](#handling-the-pointer)
-    * [Examples](#examples)
+* [Javadoc](#javadoc)
+* [Download](#download)
+* [Supported ROOT versions](#supported-root-versions)
+* [Installation](#installation)
+* [Preparing before using JROOT](#preparing-before-using-jroot)
+* [Defferences from ROOT](#defferences-from-root)
+* [Handling the pointer](#handling-the-pointer)
+* [Examples](#examples)
 
 ## Javadoc
 

@@ -7,7 +7,7 @@ JROOT is a Java binding for the [ROOT](https://root.cern.ch). JROOT provides you
 
 Note that JROOT is under development. You need to do enough tests before using JROOT in your project.
 
-# Contents
+## Contents
 
 * [Javadoc](#javadoc)
 * [Download](#download)

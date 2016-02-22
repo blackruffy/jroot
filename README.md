@@ -20,7 +20,7 @@ Note that JROOT is under development. You need to do enough tests before using J
 
 ## Javadoc
 
-[Javadoc](http://java-root.appspot.com/javadoc_v0.5/index.html)
+[JROOT v0.5](http://java-root.appspot.com/javadoc_v0.5/index.html)
 
 ## Download
 

@@ -47,6 +47,72 @@ JNIEXPORT jlong JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getPosit
 
 /*
  * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getInt8Value
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getInt8Value
+(JNIEnv *env, jclass thisj, jlong addr)
+{
+  return Pointer_getInt8Value( addr );
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getUInt8Value
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getUInt8Value
+(JNIEnv *env, jclass thisj, jlong addr) 
+{
+  return Pointer_getUInt8Value( addr );
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getInt16Value
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getInt16Value
+(JNIEnv *env, jclass thisj, jlong addr)
+{
+  return Pointer_getInt16Value( addr );
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getUInt16Value
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getUInt16Value
+(JNIEnv *env, jclass thisj, jlong addr)
+{
+  return Pointer_getUInt16Value( addr );
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getInt32Value
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getInt32Value
+(JNIEnv *env, jclass thisj, jlong addr)
+{
+  return Pointer_getInt32Value( addr );
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getUInt32Value
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getUInt32Value
+(JNIEnv *env, jclass thisj, jlong addr)
+{
+  return Pointer_getUInt32Value( addr );
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
  * Method:    Pointer_getIntValue
  * Signature: (J)I
  */
@@ -91,6 +157,72 @@ JNIEXPORT jdouble JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getDou
 
 /*
  * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setInt8Value
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setInt8Value
+(JNIEnv *env, jclass thisj, jlong addr, jint value)
+{
+  Pointer_setInt8Value(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setUInt8Value
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setUInt8Value
+(JNIEnv *env, jclass thisj, jlong addr, jint value)
+{
+  Pointer_setUInt8Value(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setInt16Value
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setInt16Value
+(JNIEnv *env, jclass thisj, jlong addr, jint value)
+{
+  Pointer_setInt16Value(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setUInt16Value
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setUInt16Value
+(JNIEnv *env, jclass thisj, jlong addr, jint value)
+{
+  Pointer_setUInt16Value(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setInt32Value
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setInt32Value
+(JNIEnv *env, jclass thisj, jlong addr, jint value)
+{
+  Pointer_setInt32Value(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setUInt32Value
+ * Signature: (JJ)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setUInt32Value
+(JNIEnv *env, jclass thisj, jlong addr, jlong value)
+{
+  Pointer_setUInt32Value(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
  * Method:    Pointer_setIntValue
  * Signature: (JI)V
  */
@@ -131,6 +263,20 @@ JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setDouble
 (JNIEnv *env, jclass thisj, jlong addr, jdouble value)
 {
   Pointer_setDoubleValue(addr, value);
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_getByteArray
+ * Signature: (JI)[B
+ */
+JNIEXPORT jbyteArray JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getByteArray
+(JNIEnv *env, jclass thisj, jlong addr, jint size)
+{
+  jbyte* xs = reinterpret_cast<jbyte*>(addr);
+  jbyteArray jxs = env->NewByteArray(size);
+  env->SetByteArrayRegion(jxs, 0, size, xs);
+  return jxs;
 };
 
 JNIEXPORT jintArray JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1getIntArray
@@ -179,6 +325,19 @@ JNIEXPORT jobjectArray JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1g
     env->SetObjectArrayElement(jxs, i, env->NewStringUTF(xs[i]));
   }
   return jxs;
+};
+
+/*
+ * Class:     net_blackruffy_root_PointerNative
+ * Method:    Pointer_setByteArray
+ * Signature: (J[B)V
+ */
+JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setByteArray
+(JNIEnv *env, jclass thisj, jlong addr, jbyteArray jxs)
+{
+  jsize size = env->GetArrayLength(jxs);
+  jbyte* xs = reinterpret_cast<jbyte*>(addr);
+  env->GetByteArrayRegion(jxs, 0, size, xs);
 };
 
 JNIEXPORT void JNICALL Java_net_blackruffy_root_PointerNative_Pointer_1setIntArray

@@ -428,7 +428,7 @@ public interface Pointer {
     PointerNative.Pointer_setFloatArray( getNativeAddress(), xs );
   }
 
-  default void getDoubleArray( double[] xs ) {
+  default void setDoubleArray( double[] xs ) {
     PointerNative.Pointer_setDoubleArray( getNativeAddress(), xs );
   }
 

@@ -175,6 +175,11 @@ THashTable* concat( const THashTable *set1, const THashTable *set2 ) {
   return set;
 }
 
+bool isExcludeType( const THashTable *set, const TString name ) {
+  TString name_ = TString(name).ReplaceAll(" ", "");
+  return has( set, name_ );
+}
+
 /**
  * '*'や'&'や'const'を取り除く
  */
@@ -211,8 +216,8 @@ bool isInvalidTypes( const THashTable *excludeTypes,
   TMethodArg *arg;
   bool flag = true;
   while( (arg = (TMethodArg*)next()) ) {
-    if( has( excludeTypes, arg->GetTypeName() ) ) flag = false;
-    else if( has( excludeTypes, arg->GetFullTypeName() ) ) flag = false;
+    if( isExcludeType( excludeTypes, arg->GetTypeName() ) ) flag = false;
+    else if( isExcludeType( excludeTypes, arg->GetFullTypeName() ) ) flag = false;
   }
   return !flag;
 }
@@ -222,10 +227,12 @@ bool hasInvalidType( const THashTable *excludeTypes,
 {
   return isInvalidTypes( excludeTypes,
                          method->GetListOfMethodArgs() ) ||
-    has( excludeTypes,
-         stripTypeName(method->GetReturnTypeName()) ) ||
-    has( excludeTypes,
-         method->GetReturnTypeName() );
+    isExcludeType
+    ( excludeTypes,
+      stripTypeName(method->GetReturnTypeName()) ) ||
+    isExcludeType
+    ( excludeTypes,
+      method->GetReturnTypeName() );
 }
 
 TString additionalHeaderMethod(TString &className)
@@ -504,7 +511,7 @@ TString convCType( const TMap *cTypes,
         _type = "const ";
       return _type + "addr_t";
     }
-    else if( !has( excludeTypes, tname ) ) {
+    else if( !isExcludeType( excludeTypes, tname ) ) {
       throw TString("Unexpected type: '") + tname + "', which is not in imps and excludeTypes or '" + type + "' is not in cTypes\n  at convCType()";
     }
   }
@@ -687,11 +694,11 @@ TString implementsSupers( const TString className,
   TString supers = "Pointer";
   while( (base = nextBase()) ) {
     TString baseName = base->GetName();
-    if( !has(imps, baseName) && !has(excludeTypes, baseName) ) {
+    if( !has(imps, baseName) && !isExcludeType( excludeTypes, baseName ) ) {
       throw "Unsupported class for java interface: " + baseName;
     }
     else if( has(imps, baseName) &&
-             !has(excludeTypes, baseName) ) {
+             !isExcludeType( excludeTypes, baseName ) ) {
       supers += ", " + baseName;
     }
   }
@@ -1303,7 +1310,7 @@ int main() {
     add( excludeTypes, "TMemberInspector" );
     add( excludeTypes, "ostream" );
     add( excludeTypes, "ofstream" );
-    add( excludeTypes, "Bool_t(*)(const TGraph*,Int_t,Int_t)" );
+    add( excludeTypes, "Bool_t(*)(constTGraph*,Int_t,Int_t)" );
     add( excludeTypes, "TMethod" );
     add( excludeTypes, "TTimer" );
     add( excludeTypes, "pair<TString,Double_t>" );
@@ -1326,7 +1333,7 @@ int main() {
     add( excludeTypes, "shared_ptr<ROOT::Math::Minimizer>" );
     add( excludeTypes, "ROOT::EFunctionMatchMode" );
     add( excludeTypes, "Double_t(*)(Double_t*,Double_t*)" );
-    add( excludeTypes, "Double_t(*)(const Double_t*,const Double_t*)" );
+    add( excludeTypes, "Double_t(*)(constDouble_t*,constDouble_t*)" );
     add( excludeTypes, "ROOT::Math::ParamFunctor" );
     add( excludeTypes, "TBranchRef");
     add( excludeTypes, "TSQLResult" );
@@ -1336,7 +1343,7 @@ int main() {
     add( excludeTypes, "TVirtualPadPainter::ETextMode" );
     add( excludeTypes, "TVirtualPadPainter::EBoxMode" );
     add( excludeTypes, "TBuffer3D" );
-    add( excludeTypes, "unsigned char" );
+    add( excludeTypes, "unsignedchar" );
     add( excludeTypes, "tm_t" );
     add( excludeTypes, "timespec_t" );
     add( excludeTypes, "TPoints" );
@@ -1353,7 +1360,7 @@ int main() {
     add( excludeTypes, "TStyle::EPaperSize" );
     add( excludeTypes, "void*&" );
     add( excludeTypes, "void*[]" );
-    add( excludeTypes, "const char**&" );
+    add( excludeTypes, "constchar**&" );
     add( excludeTypes, "void(*)()" );
     add( excludeTypes, "VoidFuncPtr_t" );
 

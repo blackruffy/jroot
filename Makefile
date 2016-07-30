@@ -68,11 +68,11 @@ gen-jnih:
 	./bin/genjnih.sh
 
 run-java:
-	java  -cp ${JAVA_CLASSPATH}:${JAVA_OUTPUT_CLASS_DIR}:${CPP_ROOT_DIR}/lib:${CPP_LIB_DIR} ${ARG1}
+	${JAVA}  -cp ${JAVA_CLASSPATH}:${JAVA_OUTPUT_CLASS_DIR}:${CPP_ROOT_DIR}/lib:${CPP_LIB_DIR} ${ARG1}
 
 run-example:
-	javac -cp ${JAVA_OUTPUT_CLASS_DIR} -d examples/java examples/java/${ARG1}.java
-	java ${JAVA_OPT} -Djava.library.path=${CPP_LIB_DIR} -cp ${JAVA_OUTPUT_CLASS_DIR}:${CPP_ROOT_DIR}/lib:${CPP_LIB_DIR}:examples/java ${ARG1}
+	${JAVAC} -cp ${JAVA_OUTPUT_CLASS_DIR} -d examples/java examples/java/${ARG1}.java
+	${JAVA} ${JAVA_OPT} -Djava.library.path=${CPP_LIB_DIR} -cp ${JAVA_OUTPUT_CLASS_DIR}:${CPP_ROOT_DIR}/lib:${CPP_LIB_DIR}:examples/java ${ARG1}
 
 run-example-cpp:
 	g++ ${CPP_OPT} -o examples/cpp/${ARG1} examples/cpp/${ARG1}.cpp -I${CPP_BUILD_SRC_DIR} -L${CPP_LIB_DIR} -lJRoot ${CPP_ROOT_FLAGS} ${CPP_ROOT_LIBS}

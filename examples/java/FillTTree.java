@@ -17,7 +17,7 @@ public class FillTTree {
     tree.branch("vec", "TLorentzVector", vec);
 
     TRandom ran = newTRandom();
-    int nev = 100000;
+    int nev = 10000;
     for( int ev=0; ev<nev; ev++ ) {
       if( ev%1000 == 0 ) out.println(ev);
       px.setIntValue((int)(ran.gaus()*100));

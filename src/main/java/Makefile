@@ -13,11 +13,11 @@ endif
 all: build-jar
 
 build-classes: *.java
-	javac -d ${JAVA_OUTPUT_CLASS_DIR} $^
+	${JAVAC} -d ${JAVA_OUTPUT_CLASS_DIR} $^
 
 build-jar: build-classes
-	jar cvf ${JAVA_LIB_DIR}/${JAVA_OUTPUT_JAR}_${ROOT_VERSION}_v${VERSION}.jar -C ${JAVA_OUTPUT_CLASS_DIR} .
+	${JAR} cvf ${JAVA_LIB_DIR}/${JAVA_OUTPUT_JAR}_${ROOT_VERSION}_v${VERSION}.jar -C ${JAVA_OUTPUT_CLASS_DIR} .
 
 javadoc: *.java
-	javadoc -locale en_US -cp ${JAVA_OUTPUT_CLASS_DIR} -d ${JAVADOC_DIR} $^
+	${JAVADOC} -locale en_US -cp ${JAVA_OUTPUT_CLASS_DIR} -d ${JAVADOC_DIR} $^
 

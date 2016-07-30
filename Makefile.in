@@ -1,6 +1,6 @@
 OS := $(shell uname)
-VERSION := 0.6.0
-ROOT_VERSION := 6.06.00
+VERSION := 0.6.1
+ROOT_VERSION := 6.06.06
 
 CPP_ROOT_DIR := `root-config --prefix`
 CPP_ROOT_LIBS := `root-config --libs --glibs`

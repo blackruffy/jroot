@@ -13,6 +13,8 @@ endif
 all: build-jar
 
 build-classes: *.java
+	echo ${JAVA_HOME}
+	echo ${JAVAC}
 	${JAVAC} -d ${JAVA_OUTPUT_CLASS_DIR} $^
 
 build-jar: build-classes

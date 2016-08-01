@@ -6,6 +6,7 @@ This software is released under the LGPL/GPL License.
 */
 
 #include "TMap.h"
+#include "TROOT.h"
 #include "TList.h"
 #include "THashTable.h"
 #include "TString.h"
@@ -1011,6 +1012,8 @@ TString makeJClassNativeHeader(TString className)
 int main() {
   try {
 
+    cout << "-----> " << gROOT->GetVersion() << endl;
+    
     // 実装するクラス
     THashTable *impClasses = new THashTable();
     add( impClasses, "TROOT");
@@ -1843,7 +1846,7 @@ int main() {
                 !invalidModifyMethod &&
                 !invalidInterfaceMethod ) {
               
-              //if( className == "TH1F" ) cout << ">>>>>>> " << defMethod << endl;
+              if( className == "TChain" ) cout << ">>>>>>> " << defMethod << endl;
               
               // 引数のC++やROOTの型をCの型に変換
               TList *xs = convArgTypes( cTypes,

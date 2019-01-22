@@ -1050,6 +1050,7 @@ int main() {
     add( impClasses, "TArrayC");
     add( impClasses, "TArrayD");
     add( impClasses, "TArrayF");
+    add( impClasses, "TArrayI");
     add( impClasses, "TUrl");
     add( impClasses, "TEventList");
     add( impClasses, "TEntryList");
@@ -1295,6 +1296,7 @@ int main() {
     add( excludeTypes, "ROOT::Fit::FitResult" );
     add( excludeTypes, "ROOT::Fit::FitResult::IModelFunction" );
     add( excludeTypes, "ROOT::Fit::BinData" );
+    add( excludeTypes, "ROOT::TIOFeatures" );
     add( excludeTypes, "TFitResultPtr" );
     add( excludeTypes, "TDictionary::DeclId_t" );
     add( excludeTypes, "TDictAttributeMap" );
@@ -1363,6 +1365,16 @@ int main() {
     add( excludeTypes, "constchar**&" );
     add( excludeTypes, "void(*)()" );
     add( excludeTypes, "VoidFuncPtr_t" );
+    add( excludeTypes, "TTreeCache" );
+    add( excludeTypes, "TH1::EStatOverflows" );
+    add( excludeTypes, "ROOT::Double_v" );
+    add( excludeTypes, "ROOT::Math::TRandomEngine" );
+    add( excludeTypes, "string_view" );
+    add( excludeTypes, "ROOT::Internal::TStringView" );
+    add( excludeTypes, "TBranch::TIOFeatures" );
+    add( excludeTypes, "ROOT::Internal::TBranchIMTHelper" );
+    add( excludeTypes, "TList::TObjLinkPtr_t" );
+    add( excludeTypes, "TF1::EAddToList" );
 
     // 変換するメソッド名
     TMap *operators = new TMap();
@@ -1393,7 +1405,7 @@ int main() {
     add( excludeOperators, "operator int" );
     add( excludeOperators, "operator long" );
     add( excludeOperators, "operator unsigned long" );
-    add( excludeOperators, "operator unsigned long int" );
+    Add( excludeOperators, "operator unsigned long int" );
     add( excludeOperators, "operator unsigned long long" );
     add( excludeOperators, "operator long int" );
     add( excludeOperators, "operator long long" );
@@ -1405,6 +1417,7 @@ int main() {
     add( excludeOperators, "operator delete[]" );
     add( excludeOperators, "operator[]");
 
+    // 削除するCのラッパー関数
     THashTable *excludeMethods = new THashTable();
     add( excludeMethods, "void TFormula_addVariables_1\\(addr_t self, const char\\*\\* vars, const int size\\)" );
     add( excludeMethods, "_mult__[0-9]+\\(addr_t self\\)" );
@@ -1413,6 +1426,8 @@ int main() {
     add( excludeMethods, "_set_" );
     add( excludeMethods, "addr_t TPostScript_newTPostScript_1\\(const addr_t arg1\\)" );
     add( excludeMethods, "const char\\* TObjString_string_1\\(addr_t self)");
+    add( excludeMethods, "emitVA");
+    add( excludeMethods, "addr_t TTree_newTTree_1\\(const addr_t tt\\)");
 
     // Cのラッパー関数の追加メソッドの宣言
     TMap *additionalHeaderMethods = new TMap();

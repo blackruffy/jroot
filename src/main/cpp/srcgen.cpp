@@ -1405,7 +1405,7 @@ int main() {
     add( excludeOperators, "operator int" );
     add( excludeOperators, "operator long" );
     add( excludeOperators, "operator unsigned long" );
-    Add( excludeOperators, "operator unsigned long int" );
+    add( excludeOperators, "operator unsigned long int" );
     add( excludeOperators, "operator unsigned long long" );
     add( excludeOperators, "operator long int" );
     add( excludeOperators, "operator long long" );
@@ -1428,6 +1428,7 @@ int main() {
     add( excludeMethods, "const char\\* TObjString_string_1\\(addr_t self)");
     add( excludeMethods, "emitVA");
     add( excludeMethods, "addr_t TTree_newTTree_1\\(const addr_t tt\\)");
+    add( excludeMethods, "void TF1_integrateForNormalization_1\\(addr_t self\\)");
 
     // Cのラッパー関数の追加メソッドの宣言
     TMap *additionalHeaderMethods = new TMap();
